@@ -6,7 +6,7 @@ A Project done for cleartrip.com
 Read Me
 ===========
 
-1.The Json data for weach flight is {"dt":"17:25","pr":"10676.0","al":"9W","aln":"Jet Airways","ad":"25/12/2013","at":"19:40","afd":"9W362"} as used in the Clear Trip original website.
+1.The Json data for each flight is {"dt":"17:25","pr":"10676.0","al":"9W","aln":"Jet Airways","ad":"25/12/2013","at":"19:40","afd":"9W362"} as used in the Clear Trip original website.
 
 2.For Rendering the DOM, i am using template. and for usability Handlebar.js is being used.
 
