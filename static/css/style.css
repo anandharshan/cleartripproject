@@ -1,0 +1,354 @@
+body {
+    margin:0px;
+    padding:0px;
+    color: #000;
+    font-family: Helvetica;
+}
+.header {
+    padding-top:5px;
+    text-align:right;
+}
+.logo {
+    padding:5px 0px 0px 10px;
+    float:left;
+}
+.header ul {
+    padding:0;
+    margin:0;
+    height:35px;
+}
+.header li {
+    list-style:none;
+    display:inline-table;
+    height:35px;
+}
+.header ul li .flight, .header ul li .suitcase, .header ul li .settings{
+    display: inline-table;
+    background: #FFF url('../images/iconSprite.png');
+    height:35px;
+    width:35px;
+    margin-right:5px;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -webkit-border-top-left-radius: 5px;
+}
+li{
+    margin-left:1px;
+    margin-right:1px;
+}
+.header ul li .selected {
+    background-color:#FFCC00;
+}
+.header ul li .flight{
+    background-position:50% 10px;
+}
+.header ul li .suitcase{
+    background-position:50% -40px;
+}
+.header ul li .settings{
+    background-position:50% -90px;
+}
+.content h1 {
+    font-size: 17px;
+    padding: 10px;
+    margin:0px;
+    background: -webkit-gradient(linear,left top,left bottom,from(#FFCD00),to(#FFBB00));
+    background-color: #FFCD00;
+    text-shadow: 0px 1px 0 #FFFF93;
+    border-bottom:1px solid #FFFF93;
+}
+.content h1 .stop {
+    overflow:hidden;
+    display:block;
+    white-space:nowrap;
+    max-width: 200px;
+    text-overflow: ellipsis;
+}
+.content h1 span {
+    font-size: 13px;
+}
+.content h1 .thin {
+    font-weight:normal;
+}
+.content .cart {
+    text-align:right;
+}
+.content .price {
+    float:left;
+    text-align:left;
+}
+.content .price span {
+    padding-left:10px;
+    font-size:13px;
+    color:#999999;
+}
+.content .price span a {
+    color:#3399ff;
+    text-decoration:none;
+    cursor:pointer;
+    font-weight:bold;
+}
+.content .cart button {
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    font-family: sans-serif;
+    text-shadow: 0px -1px 0 #000;
+    background: -webkit-gradient(linear,left top,left bottom,from(#EEAE75),to(#D85824),color-stop(0.5,#ED734A),color-stop(0.5,#D65220),color-stop(0.9,#D85824));
+    background-color: #E36031;
+    border: 1px solid #FB6621;
+    padding: 7px 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    -webkit-box-shadow: #000 0px 2px 2px,#dbdfe4 0px -1px 0px;
+    border-color: #FC9 #F63 #F63;
+    margin:8px 6px 0px 0px;
+}
+.content h3 {
+    padding:0;
+    margin:0;
+    font-size:25px;
+    padding:5px 0px 0px 10px;
+}
+.content .totalfare-int {
+    display:none;
+}
+.content .trip {
+    clear:both;
+    margin-top:20px;
+    font-size:13px;
+}
+.content .trips {
+    width:50%;
+    float:left;
+    min-height:100px;
+    background:#DBDFE4;
+    padding-bottom:5px;
+}
+.content .trips h4 {
+    margin:0;
+    padding:5px 0px 5px 10px;
+    color:#FFCC33;
+    background: -webkit-gradient(linear,left top,left bottom,from(#656565),to(#343434));
+    background:#343434;
+    border-bottom:1px solid #000;
+    text-shadow:0px 1px 0 #000;
+}
+.content a {
+    text-decoration:none;
+}
+.content .sort-trip1,.content .sort-trip2 {
+    float:left;
+    padding:7px 0px;
+    background:#CCC;
+    color:#666;
+    margin:3px 2px;
+    width:32%;
+    text-align: center;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+.content .sort-trip1.middle, .content .sort-trip2.middle {
+    margin:3px 2px;
+}
+.content .sort-trip1.last, .content .sort-trip2.last {
+    float:right;
+    margin:3px 0px;
+}
+.content .sort-trip1.selected,.content .sort-trip2.selected {
+    color:#FFF;
+    background:#999;
+}
+.content ul.flights {
+    clear:both;
+    margin:0;
+    padding:0;
+}
+.content ul.flights li {
+    list-style:none;
+    background:#FFF;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    min-height:10px;
+    margin:2px 1px;
+    padding:10px;
+    cursor:pointer;
+}
+.content ul.flights li.selected {
+    background:#2C8CF8;
+    color:#FFF;
+    -webkit-box-shadow:inset 0 0 40px #0037A5;
+    box-shadow:inset 0 0 40px #0037A5;
+}
+.content .flight-icons {
+    background:#FFF url('../images/flights.jpg');
+    height:25px;
+    width:25px;
+    float:left;
+}
+.content .flight-icons.indigo {
+    background-position:-2px 0px;
+    height:17px;
+    width:21px;
+}
+.content .flight-icons.air {
+    background-position:0px -154px;
+    height:17px;
+    width:23px;
+}
+.content .flight-icons.kf {
+    background-position:0px -48px;
+    height:20px;
+    width:23px;
+}
+.content .flight-icons.go {
+    background-position:0px -101px;
+    height:20px;
+    width:23px;
+}
+.content .flight-details{
+    float:left;
+    margin-left:5px;
+    font-size:11px;
+}
+.content .flight-details .time,.content .trip-fare {
+    font-weight:bold;
+    font-size:13px;
+}
+.content .trip-fare {
+    float:right;
+}
+.content .fare, .content .departs, .content .arrives{
+    display:none;
+}
+.content .trips .rP {
+    margin-left:1px;
+}
+.cb{
+    clear:both;
+}
+.cbid {
+    display:none;
+}
+#viewIconInfoDetail {
+    border-radius:5px;
+    -webkit-border-radius:5px;
+    width: 250px;
+    position:absolute;
+    z-index:10;
+}
+#viewIconInfoDetail .pullout {
+    border-color: transparent transparent #FFFFCC;
+    border-style: solid;
+    border-width: 0 10px 10px;
+    height: 0;
+    width: 0;
+    margin-left:10px;
+}
+#viewIconInfoDetail .leaf {
+    background:#FFFFCC;
+    color:#323232;
+    padding:5px;
+    border-radius:5px;
+    -webkit-border-radius:5px;
+}
+#viewIconInfoDetail .leaf .lefty{
+    float:left;
+}
+#viewIconInfoDetail .leaf .lefty h4 {
+    padding:0 0 0 10px;
+    margin:0;
+}
+#viewIconInfoDetail .leaf .close {
+    color:#F6D77C;
+    font-size:13px;
+    border:1px solid #F6D77C;
+    border-radius:2px;
+    -webkit-border-radius:2px;
+    padding:0px 4px;
+    float:right;
+    cursor:pointer;
+}
+#viewIconInfoDetail .fbdetails {
+    font-size:12px;
+    text-align:center;
+    padding:0 0 0 10px;
+    clear:both;
+}
+#viewIconInfoDetail .fbbig {
+    font-weight:bold;
+    font-size:13px;
+}
+
+.filter label {
+	display: inline-table;
+	width: 130px;
+	padding: 5px;
+	text-align: right;
+	border: 1px solid #EEE;
+	height: 40px;
+	background-color: white;
+	-webkit-border-radius: 5px;
+}
+
+.filter label span {
+	font-size: 10px;
+	width: 65px;
+	vertical-align: middle;
+	float:none;
+}
+
+.filter label * {
+	display: inline-table;
+	text-align: left;
+}
+.filter input {
+float: left;
+margin-top: 4px;
+padding: 3px;
+}
+.filter label span.airlogo {
+width: 22px;
+height: 23px;
+margin: 0 5px;
+float:none;
+}
+
+fieldset.filter legend{
+font-weight:bold;
+}
+.action button {
+color: white;
+font-size: 17px;
+font-weight: bold;
+font-family: sans-serif;
+border: 1px solid;
+padding: 10px 15px;
+text-shadow: 0px -1px 0 black;
+-webkit-border-radius: 10px;
+-webkit-box-shadow: #000 0px 1px 1px, #666 0px -1px 0px;
+background: -webkit-gradient(linear, left top, left bottom, from(#EEAE75), to(#D85824), color-stop(0.5, #ED734A), color-stop(0.5, #D65220), color-stop(0.95, #D85824));
+background-color: #E36031;
+border-color: #FC9 #F63 #F63 #F63;
+}
+
+.pillButton{
+	-webkit-box-shadow: #FF6 0px 1px 0px;
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FFD83C), to(#E6C832));
+	border: 1px solid #9D7E00;
+	border-bottom-left-radius: 5px 5px;
+	border-bottom-right-radius: 5px 5px;
+	border-top-left-radius: 5px 5px;
+	border-top-right-radius: 5px 5px;
+	color: black;
+	font-size: 11px;
+	font-weight: bold;
+	padding: 6px;
+	text-decoration: none;
+	text-shadow: #FF9 0px 1px 0px;
+	vertical-align: middle;
+}
+.fRight{
+	float: right;
+}

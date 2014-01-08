@@ -1,0 +1,192 @@
+<!DOCTYPE html> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+	<head> 
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+		<title>Cleartrip</title> 
+		<meta name="viewport" content="width=device-width, user-scalable=no"/> 
+		<link media="screen" href="./static/css/style.css" type= "text/css" rel="stylesheet">
+		<style>
+		</style>
+<script type="text/javascript">
+		var jsonobj = {"FLIGHTS":
+[{"dt":"17:25","pr":"10676.0","al":"9W","aln":"Jet Airways","ad":"25/12/2013","at":"19:40","afd":"9W362"},{"dt":"17:20","pr":"10098.0","al":"SG","aln":"SpiceJet","ad":"25/12/2013","at":"19:35","afd":"SG119"},{"dt":"17:25","pr":"10099.0","al":"S2","aln":"JetKonnect","ad":"25/12/2013","at":"19:40","afd":"S23919"},{"dt":"18:30","pr":"10288.0","al":"AI","aln":"Air India","ad":"25/12/2013","at":"20:30","afd":"AI810"},{"dt":"21:35","pr":"10340.0","al":"9W-K","aln":"JetKonnect","ad":"25/12/2013","at":"23:40","afd":"9W-K2306"},{"dt":"18:30","pr":"10098.0","al":"6E","aln":"IndiGo","ad":"25/12/2013","at":"20:40","afd":"6E187"},{"dt":"19:45","pr":"10676.0","al":"9W","aln":"Jet Airways","ad":"26/12/2013","at":"21:50","afd":"9W354"},{"dt":"15:55","pr":"10098.0","al":"SG","aln":"SpiceJet","ad":"26/12/2013","at":"18:05","afd":"SG852"},{"dt":"10:00","pr":"10099.0","al":"S2","aln":"JetKonnect","ad":"26/12/2013","at":"12:10","afd":"S23980"},{"dt":"08:00","pr":"10288.0","al":"AI","aln":"Air India","ad":"26/12/2013","at":"10:10","afd":"AI665"},{"dt":"16:00","pr":"10340.0","al":"9W-K","aln":"JetKonnect","ad":"26/12/2013","at":"18:05","afd":"9W-K7083"},{"dt":"12:20","pr":"10098.0","al":"G8","aln":"GoAir","ad":"26/12/2013","at":"14:20","afd":"G8332"},{"dt":"05:35","pr":"10098.0","al":"6E","aln":"IndiGo","ad":"26/12/2013","at":"07:45","afd":"6E171"},{"dt":"19:45","pr":"9469.0","al":"9W","aln":"Jet Airways","ad":"04/01/2014","at":"21:50","afd":"9W354"},{"dt":"15:55","pr":"8891.0","al":"SG","aln":"SpiceJet","ad":"04/01/2014","at":"18:05","afd":"SG852"},{"dt":"16:00","pr":"8892.0","al":"S2","aln":"JetKonnect","ad":"04/01/2014","at":"18:05","afd":"S24107"},{"dt":"08:00","pr":"9081.0","al":"AI","aln":"Air India","ad":"04/01/2014","at":"10:10","afd":"AI665"},{"dt":"16:00","pr":"9134.0","al":"9W-K","aln":"JetKonnect","ad":"04/01/2014","at":"18:05","afd":"9W-K7083"},{"dt":"12:20","pr":"8891.0","al":"G8","aln":"GoAir","ad":"04/01/2014","at":"14:20","afd":"G8332"},{"dt":"05:35","pr":"8891.0","al":"6E","aln":"IndiGo","ad":"04/01/2014","at":"07:45","afd":"6E171"}]}
+
+function loadjscssfile(filename, filetype){
+ if (filetype=="js"){ //if filename is a external JavaScript file
+  var fileref=document.createElement('script');
+  fileref.setAttribute("type","text/javascript");
+  fileref.setAttribute("src", filename);
+ }
+ else if (filetype=="css"){ //if filename is an external CSS file
+  var fileref=document.createElement("link");
+  fileref.setAttribute("rel", "stylesheet");
+  fileref.setAttribute("type", "text/css");
+  fileref.setAttribute("href", filename);
+ }
+ if (typeof fileref!="undefined")
+  document.getElementsByTagName("head")[0].appendChild(fileref);
+}
+
+//loadjscssfile(".\\static\\js\\underscore-min.js", "js");
+loadjscssfile(".\\static\\js\\cleartriphome.js", "js");
+//loadjscssfile(".\\static\\js\\handlebars-v1.2.0.js", "js");
+
+</script>
+<script src="static/js/underscore-min.js"></script>
+<script src="static/js/handlebars-v1.2.0.js"></script>
+
+<script id="entry-template" type="text/x-handlebars-template">
+{{#each this}}
+  <li class="">
+	<div class="flight-icons {{flighticonhelper aln}}">
+	</div>
+	<div class="flight-details">
+		<div class="time">{{dt}} - {{at}}</div>
+		<div class="name">{{aln}}</div>
+		<div class="duration">1h :0m</div>
+	</div>
+	<div class="trip-fare">Rs. {{pr}}</div>
+	<div class="fare">{{pr}}</div>
+	<div class="departs">1314938580000</div>
+	<div class="arrives">1314942180000</div>
+	<div class="cb">
+		<span class="cbid">1</span>
+	</div>
+	</li>
+{{/each}}
+</script>
+
+	</head>
+        <body>
+            <div class="header">
+                <div class="logo">
+                    <img src="./static/images/cleartrip_logo.gif" alt="cleartrip" height="25px" />
+                </div>
+                <ul>
+                    <li>
+                        <a class="flight selected" href="#"></a>
+                    </li>
+                    <li>
+                        <a class="suitcase" href="#"></a>
+                    </li>
+                    <li>
+                        <a class="settings" href="#"></a>
+                    </li>
+            </div>
+            <div class="content">
+                <h1>
+                    <strong class="stop">New Delhi - Mumbai</strong>
+                    <span>Mon, 02 Aug - Sun, 08 Aug</span><span class="thin"> | 2 adults, 2 children</span>
+					<a class="pillButton fRight" id="filterbutton" href="javascript:void(0);" /*onclick="if(document.getElementById('filter').style.display == 'none'){document.getElementById('filter').style.display='';}else{document.getElementById('filter').style.display='none';}"*/ >Filter</a>
+				 </h1>
+				<div id="filter" style="display:none">
+					<form method="post" action="results.shtml">
+						<div class="settingsArea">
+							<fieldset class="filter">
+								<legend>Departure time</legend>
+								<select>
+									<option value="0">Anytime</option>
+									<option value="1">Early (Before 8am)</option>
+									<option value="2">Morning (8am - 12pm)</option>
+									<option value="3">Afternoon (12pm - 4pm)</option>
+									<option value="4">Evening (4pm - 8pm)</option>
+									<option value="5">Night (After 8pm)</option>
+								</select>	
+							</fieldset>	
+							<fieldset class="filter">
+								<legend>Return time</legend>
+								<select>
+									<option value="0">Anytime</option>
+									<option value="1">Early (Before 8am)</option>
+									<option value="2">Morning (8am - 12pm)</option>
+									<option value="3">Afternoon (12pm - 4pm)</option>
+									<option value="4">Evening (4pm - 8pm)</option>
+									<option value="5">Night (After 8pm)</option>
+								</select>
+							</fieldset>	
+							<fieldset class="filter stations">
+								<legend>Preferred Airlines</legend>
+								<label for="AI"><input id="AI" type="checkbox" value="AI" name="airline_codes"><span class="airlogo fAI"></span> <span>Air India</span></label>
+								<label for="IC"><input id="IC" type="checkbox" value="IC" name="airline_codes"><span class="airlogo fIC"></span> <span>Air India IC</span></label>
+								<label for="G8"><input id="G8" type="checkbox" value="G8" name="airline_codes"><span class="airlogo fG8"></span> <span>GoAir</span></label>
+								<label for="6E"><input id="6E" type="checkbox" value="6E" name="airline_codes"><span class="airlogo f6E"></span> <span>IndiGo</span></label>
+								<label for="9W"><input id="9W" type="checkbox" value="9W" name="airline_codes"><span class="airlogo f9W"></span> <span>Jet Airways</span></label>
+								<label for="9W-K"><input id="9W-K" type="checkbox" value="9W-K" name="airline_codes"><span class="airlogo f9W-K"></span> <span>Jet Airways Konnect</span></label>
+								<label for="S2"><input id="S2" type="checkbox" value="S2" name="airline_codes"><span class="airlogo fS2"></span> <span>JetLite</span></label>
+								<label for="IT"><input id="IT" type="checkbox" value="IT" name="airline_codes"><span class="airlogo fIT"></span> <span>Kingfisher</span></label>
+								<label for="IT-RED"><input id="IT-RED" type="checkbox" value="IT-RED" name="airline_codes"><span class="airlogo fIT-RED"></span> <span>Kingfisher Red</span></label>
+								<label for="SG"><input id="SG" type="checkbox" value="SG" name="airline_codes"><span class="airlogo fSG"></span> <span>SpiceJet</span></label>
+							</fieldset>
+							
+						</div>
+							<p class="action"><button type="button" id="applyFilter" >Filter flights</button></p>		
+					</form>
+				</div>
+				<div id="display">
+					<div class="cart">
+						<div class="price">
+							<h3 id="totalfare" class="totalfare">Rs. 0</h3>
+							<span class="totalfare-int">0</span>
+							<span>includes all charges (<a id="fbup">fare breakup</a>)</span>
+						</div>
+
+						<div class="buy">
+							<button>Book</button>
+						</div>
+
+					</div>
+					<div class="trip">
+					<div class="trips">
+						<h4 class="rP">Mumbai - New Delhi</h4>
+						<div class="sorts">
+							<a href="#" class="sort-trip2" >
+								departs
+							</a>
+							<a href="#" class="sort-trip2 middle" >
+								arrives
+							</a>
+							<a href="#" class="sort-trip2 last selected" >
+								price
+							</a>
+						</div>
+						<ul class="flights" id="trip1-list">
+						</ul>					
+					</div>
+					
+					<div class="trips">
+						<h4 class="rP">Mumbai - New Delhi</h4>
+						<div class="sorts">
+							<a href="#" class="sort-trip2">
+								departs
+							</a>
+							<a href="#" class="sort-trip2 middle" >
+
+								arrives
+							</a>
+							<a href="#" class="sort-trip2 last selected" >
+								price
+							</a>
+						</div>
+					   <ul class="flights" id="trip2-list">
+						</ul>
+					</div>
+				</div>
+				</div>
+				</div>
+            
+        </body>
+ <script type="text/javascript">
+function AddEvent(html_element, event_name, event_function) 
+{       
+   if(html_element.attachEvent) //Internet Explorer
+      html_element.attachEvent("on" + event_name, function() {event_function.call(html_element);}); 
+   else if(html_element.addEventListener) //mordern browsers
+      html_element.addEventListener(event_name, event_function, false);          
+} 
+
+function showandhidefiltersection(){
+	if(document.getElementById('filter').style.display == 'none'){document.getElementById('filter').style.display='';}else{document.getElementById('filter').style.display='none';}
+}
+
+</script>
+</html>
