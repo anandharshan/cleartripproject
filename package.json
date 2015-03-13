@@ -1,0 +1,33 @@
+{
+  "name": "cleartripproject",
+  "version": "1.0.0",
+  "description": "App for booking the airplain tickets",
+  "main": "server.js",
+  "dependencies": {
+    "connect": "^3.3.4",
+    "express": "^4.12.1",
+    "serve-static": "^1.9.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anandharshan/cleartripproject.git"
+  },
+  "keywords": [
+    "Clear",
+    "trip",
+    "air",
+    "plane",
+    "booking"
+  ],
+  "author": "Anand Harshan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anandharshan/cleartripproject/issues"
+  },
+  "homepage": "https://github.com/anandharshan/cleartripproject"
+}
